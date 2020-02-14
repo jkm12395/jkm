@@ -5,8 +5,13 @@
 from django.conf.urls import url
 from . import views
 
+app_name = "booktest"
 urlpatterns = [
-    url(r'^index/$', views.index),
-    url(r'^detail/(\d+)', views.detail),
-    url(r'^about/$', views.about)
+    # url(r'^index/$', views.index),
+    url(r'^$', views.index, name='index'),
+    url(r'^detail/(\d+)/$', views.detail, name='detail'),
+    url(r'^about/$', views.about, name='about'),
+    url(r'^deletebook/(\d+)/$', views.deletebook, name='deletebook'),
+    url(r'^addhero/(\d+)/$', views.addhero, name='addhero'),
+    url(r'^deletehero/(\d+)/$', views.deletehero, name='deletehero')
 ]
